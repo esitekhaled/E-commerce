@@ -1,0 +1,11 @@
+const express=require('express')
+const Route = express.Router()
+const productController=require("../controler.js/product.controller")
+Route.post('/product/:id',productController.addProduct)
+Route.get('/product/:category',productController.findProduct)
+Route.get('/product',productController.findAllProduct)
+Route.get('/product/:id',productController.findProductsBySellerId)
+Route.get('/product/:rate',productController.findProductByRating)
+Route.put('/product/:id',productController.updateProduct)
+Route.delete('/product/:id',productController.deleteProduct)
+module.exports= Route
